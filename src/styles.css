@@ -1,7 +1,7 @@
+/* Paleta de colores*/
 :root {
-  --bg: #1e1e2e;
-  --dusk: #2a2a3b;
-  --violet: #9d4edd;
+  --bg: #181818;
+  --dusk: #111111;
   --text: #f2f2f7;
   --muted: #b0b0c0;
   --accent: #ff6b6b;
@@ -21,13 +21,17 @@ body,
   height: 100%;
 }
 
+body {
+  background-color: var(--bg);
+  font-family: "Montserrat", sans-serif;
+}
 /********************************************************************/
 /* HEADER */
 .header {
   top: 0;
   background: var(--dusk);
   position: sticky;
-  border-bottom: 2px solid var(--accent);
+  border-bottom: 2px solid var(--dusk);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -37,7 +41,7 @@ body,
   width: 100%;
   height: auto;
   max-width: 250px;
-  margin: 5px 250px; /* Separacion con los bordes de la pagina */
+  margin: 15px; /* Separacion con los bordes de la pagina */
 }
 
 .header nav ul {
@@ -46,7 +50,7 @@ body,
   gap: 100px;
   color: var(--text);
   list-style: none; /* quita los puntos de li */
-  margin: 0 250px 0 0;
+  margin: 15px;
 }
 
 .header nav ul li {
@@ -54,10 +58,15 @@ body,
   align-items: center;
 }
 
+.header nav ul li a {
+  color: var(--text);
+  text-decoration: none;
+}
+
 .login-btn {
   background: var(--accent);
   color: var(--text);
-  border: none;
+  border: 2px solid var(--accent);
   border-radius: 8px;
   padding: 10px 32px;
   font-size: 1rem;
@@ -65,12 +74,55 @@ body,
   cursor: pointer;
   transition: background 0.2s, color 0.2s, box-shadow 0.2s;
   box-shadow: 0 2px 8px rgba(157, 78, 221, 0.08);
+  font-family: "Montserrat", sans-serif;
 }
 
+.login-btn:hover,
+.login-btn:focus {
+  background: none;
+  color: #fff;
+  outline: none;
+  font-family: "Montserrat", sans-serif;
+}
 .login-btn:active {
+  background: var(--accent);
   color: #fff;
   transform: scale(0.96);
   box-shadow: 0 1px 4px rgba(157, 78, 221, 0.12);
 }
 
-/* ...existing code... */
+/* HERO */
+.hero {
+  display: flex;
+  align-items: center;
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px;
+}
+.container .titulo1 {
+  color: var(--text);
+  font-size: 50px;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  font-style: italic;
+}
+.container .titulo2 {
+  color: var(--text);
+  font-size: 64px;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  font-style: italic;
+}
+
+.hero img {
+  width: 1000px;
+  clip-path: polygon(
+    25% 0%,
+    100% 0%,
+    75% 100%,
+    0% 100%
+  ); /* Recorte de imagen para que no sea cuadrada*/
+}
