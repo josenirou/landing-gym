@@ -1,0 +1,76 @@
+:root {
+  --bg: #1e1e2e;
+  --dusk: #2a2a3b;
+  --violet: #9d4edd;
+  --text: #f2f2f7;
+  --muted: #b0b0c0;
+  --accent: #ff6b6b;
+}
+
+.accent {
+  color: var(--accent);
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; /*Reset */
+}
+html,
+body,
+#root {
+  height: 100%;
+}
+
+/********************************************************************/
+/* HEADER */
+.header {
+  top: 0;
+  background: var(--dusk);
+  position: sticky;
+  border-bottom: 2px solid var(--accent);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header img {
+  width: 100%;
+  height: auto;
+  max-width: 250px;
+  margin: 5px 250px; /* Separacion con los bordes de la pagina */
+}
+
+.header nav ul {
+  display: grid;
+  grid-auto-flow: column;
+  gap: 100px;
+  color: var(--text);
+  list-style: none; /* quita los puntos de li */
+  margin: 0 250px 0 0;
+}
+
+.header nav ul li {
+  display: flex;
+  align-items: center;
+}
+
+.login-btn {
+  background: var(--accent);
+  color: var(--text);
+  border: none;
+  border-radius: 8px;
+  padding: 10px 32px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+  box-shadow: 0 2px 8px rgba(157, 78, 221, 0.08);
+}
+
+.login-btn:active {
+  color: #fff;
+  transform: scale(0.96);
+  box-shadow: 0 1px 4px rgba(157, 78, 221, 0.12);
+}
+
+/* ...existing code... */
