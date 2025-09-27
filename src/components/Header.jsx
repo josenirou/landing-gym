@@ -6,13 +6,16 @@ function Header() {
       <nav>
         <ul>
           <li>
-            <a href="">INICIO</a>
+            <a href="#inicio">INICIO</a>
           </li>
           <li>
-            <a href="">PLANES</a>
+            <a href="#services">SERVICIOS</a>
           </li>
           <li>
-            <a href="">CONTACTO</a>
+            <a href="#pricing">PLANES</a>
+          </li>
+          <li>
+            <a href="#contact">CONTACTO</a>
           </li>
           <button className="login-btn">INICIAR SESIÓN</button>
         </ul>

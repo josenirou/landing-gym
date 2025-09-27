@@ -1,7 +1,7 @@
 import img_hero from "../assets/images/img_hero.jpg";
 function Hero() {
   return (
-    <div className="hero">
+    <div id="inicio" className="hero">
       <img src={img_hero} alt="Persona levantando peso" />
       <div className="container_hero">
         <h1 className="titulo1">

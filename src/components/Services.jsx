@@ -1,73 +1,79 @@
-import Card from "./Card";
-import no_image from "../assets/images/no_image.png";
-
-const servicesData = [
-  {
-    titulo: "🏋️ MUSCULACIÓN",
-    img: no_image,
-    alt: "1",
-    descripcion:
-      "Dos pisos equipados con máquinas de pesas, mancuernas y barras, más asistentes que orientan tu entrenamiento para sacar el máximo provecho.",
-  },
-  {
-    titulo: "🚴 SPINNING",
-    img: no_image,
-    alt: "1",
-    descripcion:
-      "Clases de ciclismo indoor con música enérgica, ideales para mejorar la resistencia cardiovascular y quemar calorías.",
-  },
-  {
-    titulo: "🥋 TAEKWON-DO",
-    img: no_image,
-    alt: "1",
-    descripcion:
-      "Arte marcial coreano que combina defensa personal, disciplina y trabajo físico intenso.",
-  },
-  {
-    titulo: "🥊 AEROBOX",
-    img: no_image,
-    alt: "1",
-    descripcion:
-      "Entrenamiento aeróbico inspirado en el boxeo, que mezcla cardio, coordinación y liberación de estrés.",
-  },
-  {
-    titulo: "🍑 GAP",
-    img: no_image,
-    alt: "1",
-    descripcion:
-      "Rutinas focalizadas para tonificar glúteos, abdomen y piernas, mejorando fuerza y resistencia localizada.",
-  },
-  {
-    titulo: "⚡ HIIT",
-    img: no_image,
-    alt: "1",
-    descripcion:
-      "Sesiones de intervalos cortos e intensos, perfectos para acelerar el metabolismo y mejorar el rendimiento.",
-  },
-];
+import musc from "../assets/images/musculacion.png";
+import spin from "../assets/images/spinning.png";
+import tae from "../assets/images/taekwon-do.png";
+import aero from "../assets/images/aerobox.png";
+import gap from "../assets/images/gap.png";
+import hiit from "../assets/images/hiit.png";
 
 function Services() {
+  const services = [
+    {
+      emoji: "🏋️",
+      title: "Musculación",
+      desc: "Dos pisos con máquinas, mancuernas y barras, más asistentes que te orientan.",
+      img: musc,
+    },
+    {
+      emoji: "🚴",
+      title: "Spinning",
+      desc: "Ciclismo indoor con música enérgica para mejorar resistencia.",
+      img: spin,
+    },
+    {
+      emoji: "🥋",
+      title: "Taekwon-do",
+      desc: "Arte marcial coreano que combina defensa personal y disciplina.",
+      img: tae,
+    },
+    {
+      emoji: "🥊",
+      title: "Aerobox",
+      desc: "Entrenamiento aeróbico inspirado en boxeo, cardio y coordinación.",
+      img: aero,
+    },
+    {
+      emoji: "🍑",
+      title: "GAP",
+      desc: "Tonifica glúteos, abdomen y piernas con rutinas focalizadas.",
+      img: gap,
+    },
+    {
+      emoji: "⚡",
+      title: "HIIT",
+      desc: "Intervalos de alta intensidad para acelerar el metabolismo.",
+      img: hiit,
+    },
+  ];
+
   return (
-    <section id="services" className="section">
-      <div className="container">
-        <h2 className="section-title">NUESTROS SERVICIOS</h2>
-        <p className="section-subtitle">
-          Entrena con clases guiadas y equipamiento de primer nivel.
-        </p>
-        <span className="bar" />
-        <div className="grid">
-          {servicesData.map((service, index) => (
-            <Card
-              key={index}
-              titulo={service.titulo}
-              img={service.img}
-              alt={service.alt}
-              descripcion={service.descripcion}
-            />
-          ))}
+    <>
+      <section id="services" className="section section--services">
+        <div className="container">
+          <header className="section-head">
+            <h2>NUESTROS SERVICIOS</h2>
+            <p className="muted">OPCIONES PARA TODOS LOS GUSTOS Y NIVELES.</p>
+            <span className="bar" />
+          </header>
+
+          <div className="services-grid">
+            {services.map((s) => (
+              <div
+                key={s.title}
+                className="service"
+                style={{ "--bg": `url(${s.img})` }}
+              >
+                <span className="service-emoji">{s.emoji}</span>
+                <h3 className="service-title">{s.title}</h3>
+                <p className="service-desc muted">{s.desc}</p>
+              </div>
+            ))}
+          </div>
         </div>
+      </section>
+      <div className="divider">
+        <span></span>
       </div>
-    </section>
+    </>
   );
 }
 
